@@ -31,7 +31,7 @@
 
     body {
        background: #0a001f url('https://www.transparenttextures.com/patterns/stardust.png');
-  color: var(--text);
+  color: var(--text-color);
   background-attachment: fixed;
   background-size: cover;
   animation: pulseBackground 20s ease-in-out infinite;
@@ -245,7 +245,7 @@
 
   /* About Card */
     .about-card {
-      background: (var(--text-color), 0.7);
+      background: rgba(var(--text-color), 0.7);
       border: 2px solid var(--border-color);
       border-radius: 12px;
       padding: 40px;
@@ -689,13 +689,13 @@
 >
   <!-- Add these hidden fields -->
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://yourportfolio.com/thank-you.html">
+  
+  <input type="hidden" name="_next" value="https://nithyasreeee.github.io/portfolio/thank-you.html">
   
   <!-- Your existing fields -->
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="email" name="email" placeholder="Your Email" required>
   <textarea name="message" placeholder="Your Message" required></textarea>
-  <input type="hidden" name="_next" value="https://yourportfolio.com/thank-you.html">
   <button type="submit">Send Message</button>
   
 </form>
@@ -711,7 +711,7 @@
 
   <footer>&copy; 2025 Nithya Sree</footer>
 
-  <script>
+ 
     // Fade-in effect
     window.addEventListener('scroll', () => {
       document.querySelectorAll('.section').forEach(sec => {
