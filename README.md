@@ -24,11 +24,3 @@ This project showcases my skills, experience, and projects through a visually en
 - GitHub Pages (for free hosting)
 
 ---
-
-## 📸 Screenshots
-
-| 🏠 Home Page | 💼 Projects Section |
-|-------------|---------------------|
-| ![Home](homepagescreenshot.jpg) | ![Projects](projecrpagescreenshot.jpg) |
-
----
