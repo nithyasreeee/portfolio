@@ -7,521 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    /* Light Theme (Default) */
-    :root {
-      --bg-color: #f5f0e1;
-      --text-color: #3c2f2f;
-      --accent-color: #8e5e2e;
-      --highlight-color: #b29476;
-      --border-color: #d6c3b3;
-
-}
-    
-
-    /* Dark Theme Overrides */
-    .dark-theme {
-      --bg-color: #1e1e1e;
-      --text-color: #eaeaea;
-      --accent-color: #ca9613;
-      --highlight-color: #cbb89d;
-      --border-color: #444;
-    
-    }
-
-    body {
-       background: #0a001f url('https://www.transparenttextures.com/patterns/stardust.png');
-  color: var(--text);
-  background-attachment: fixed;
-  background-size: cover;
-  animation: pulseBackground 20s ease-in-out infinite;
-  line-height: 1.6;
-  transition: background 0.3s, color 0.3s;
-}
-
-@keyframes pulseBackground {
-  0%, 100% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(30deg); }
-}
-
-
-    h1 {
-      font-size: 3rem;
-    }
-    h2 {
-      font-size: 2.5rem;
-    }
-    p, li {
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
-
-    /* Header */
-    header {
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      background: var(--accent-color);
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      color: var(--bg-color);
-    }
-
-    /* Hero Section Styling */
-.hero-subtitle {
-  text-align: center;
-  color: var(--highlight-color);
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.cta-btn {
-  padding: 12px 25px;
-  background: var(--accent-color);
-  color: var(--bg-color);
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 2px solid transparent;
-}
-
-.cta-btn:hover {
-  background: var(--highlight-color);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.cta-btn i {
-  font-size: 0.9em;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cta-btn {
-    width: 200px;
-    justify-content: center;
-  }
-}
-
-    .navbar {
-      background-color: var(--accent-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 100%;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--bg-color);
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--highlight-color);
-    }
-
-    .particles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
-  
-  .particle {
-    position: absolute;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: float linear infinite;
-  }
-  
-  @keyframes float {
-    0% {
-      transform: translateY(0) rotate(0deg);
-      opacity: 0.3;
-    }
-    100% {
-      transform: translateY(-100vh) rotate(360deg);
-      opacity: 0;
-    }
-  }
-  
-  .dark-theme .particle {
-    opacity: 0.2;
-  }
-
-    .dark-mode-toggle {
-      background-color: var(--highlight-color);
-      color: var(--bg-color);
-      border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-family: 'EB Garamond', serif;
-      font-size: 1rem;
-    }
-
-    .theme-toggle:hover {
-      background: var(--accent-color);
-      transform: scale(1.05);
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: var(--accent-color);
-      animation: fadeIn 1.2s ease forwards;
-      opacity: 0;
-    }
-
-    h1 { animation-delay: 0.2s; }
-    h2 { animation-delay: 0.4s; }
-
-    .hero-icon {
-      text-align: center;
-      font-size: 4.5rem;
-      color: var(--accent-color);
-      animation: bounce 2.5s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-
-    .fade-in {
-      animation: fadeIn 2s ease-in forwards;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    
-
-  /* About Card */
-    .about-card {
-      background: (var(--text-color), 0.7);
-      border: 2px solid var(--border-color);
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-      color: var(--text-color);
-      max-width: 800px;
-      margin: 30px auto 0;
-      backdrop-filter: blur(3px);
-      text-align: center;
-      animation: fadeUp 0.9s forwards;
-    }
-
-    .about-card p {
-      background: var(--bg-color);
-      border: 2px solid var(--border-color);
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      color: var(--text-color);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 0.9s forwards;
-      margin-bottom: 20px;
-    }
-
-    .section {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeIn 1.2s ease-out forwards;
-    }
-
-    .skills-grid, .projects-grid, .experience-grid {
-      display: grid;
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
-    .projects-grid, .experience-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-
-    .card {
-      background: var(--bg-color);
-      border: 2px solid var(--border-color);
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      color: var(--text-color);
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeUp 0.9s forwards;
-    }
-
-    .card:nth-child(even) { animation-delay: 0.3s; }
-    .card:nth-child(odd) { animation-delay: 0.5s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .skills-grid .card i {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
-    }
-    /* Add these to your existing styles */
-.skills-category {
-  margin-bottom: 2.5rem;
-}
-
-.skills-category h3 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.skills-category h3 i {
-  font-size: 1.2rem;
-}
-
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.4s;
-    }
-
-    .project-card img:hover {
-      transform: scale(1.03);
-    }
-
-    .experience-card {
-      padding: 28px;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .contact-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: var(--bg-color);
-      padding: 40px 20px;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: 20px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px 14px;
-      border: 1px solid var(--text-color);
-      border-radius: 6px;
-      font-family: 'EB Garamond', serif;
-      font-size: 1rem;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: border-color 0.3s ease;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--accent-color);
-      outline: none;
-    }
-
-    .contact-form textarea {
-      height: 120px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      align-self: flex-start;
-      padding: 10px 20px;
-      background-color: var(--accent-color);
-      color: var(--bg-color);
-      border: none;
-      font-family: 'EB Garamond', serif;
-      font-size: 1.1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background-color: var(--highlight-color);
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 20px;
-      font-family: 'EB Garamond', serif;
-    }
-
-    .contact-links a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    .contact-links a:hover {
-      color: var(--accent-color);
-    }
-
-    .contact-links i {
-      margin-right: 6px;
-      color: var(--accent-color);
-    }
-
-    /* Personality Section Styling */
-#personality {
-  background: rgba(var(--accent-color), 0.1);
-  padding: 60px 20px;
-  border-radius: 16px;
-  margin: 40px auto;
-  max-width: 1200px;
-}
-
-.personality-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.trait-card {
-  text-align: center;
-  padding: 40px 25px;
-  background: var(--bg-color);
-  border-radius: 12px;
-  transition: all 0.4s ease;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-.trait-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-}
-
-.trait-card i {
-  font-size: 2.8rem;
-  color: var(--accent-color);
-  margin-bottom: 20px;
-  transition: transform 0.4s;
-}
-
-.trait-card:hover i {
-  transform: scale(1.1);
-}
-
-.trait-card h3 {
-  color: var(--accent-color);
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-}
-
-.trait-card p {
-  color: var(--text-color);
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .personality-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  
-  .trait-card {
-    padding: 30px 20px;
-  }
-}
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--accent-color);
-      color: var(--bg-color);
-      margin-top: 40px;
-      font-size: 1rem;
-    }
-
-    @media (max-width: 600px) {
-      .navbar {
-        flex-direction: column;
-        padding: 1rem;
-      }
-      
-      .nav-links {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .contact-form {
-        width: 100%;
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light-theme">
-
   <header>
     <nav class="navbar">
       <div class="logo">Nithya Sree</div>
@@ -531,87 +19,79 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
-
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button id="theme-toggle" class="dark-mode-toggle">🌙 Dark Mode</button>
     </nav>
   </header>
 
-
-
-  <!-- Option 1: In hero section after your title -->
-<section id="home">
-  <div class="hero-icon"><i class="fas fa-hand-peace"></i></div>
-  <h1>Hello, I'm Nithya Sree</h1>
-  <p class="hero-subtitle">Full Stack Developer & UI/UX Designer</p>
-  
-  <!-- Modified buttons without contact info -->
-  <div class="hero-buttons">
-   
-    <a href="Nithyasree Resume.pdf" download class="cta-btn resume-btn">
-      <i class="fas fa-download"></i> Download Resume
-    </a>
-  </div>
-</section>
+  <section id="home">
+    <div class="hero-icon"><i class="fas fa-hand-peace"></i></div>
+    <h1>Hello, I'm Nithya Sree</h1>
+    <p class="hero-subtitle">Full Stack Developer & UI/UX Designer</p>
+    
+    <div class="hero-buttons">
+      <a href="Nithyasree Resume.pdf" download class="cta-btn resume-btn">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+    </div>
+  </section>
 
   <div id="about">
     <h2>About Me</h2>
     <div class="about-card main-card">
-    <p class="about-grid">
-       Full Stack Developer with expertise in React, Node.js, Express, and MongoDB. Experienced in creating complete web applications
- with responsive user interfaces and reliable backend systems. Skilled in managing databases and ensuring smooth communication
- between frontend and backend. Focused on building scalable solutions that improve user experience and meet project
- requirements.
-    </p>
-    
-  </section>
+      <p class="about-grid">
+        Full Stack Developer with expertise in React, Node.js, Express, and MongoDB. Experienced in creating complete web applications
+        with responsive user interfaces and reliable backend systems. Skilled in managing databases and ensuring smooth communication
+        between frontend and backend. Focused on building scalable solutions that improve user experience and meet project
+        requirements.
+      </p>
+    </div>
+  </div>
 
   <section id="skills">
-  <h2>Skills</h2>
-  
-  <div class="skills-category">
-    <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
-    <div class="skills-grid">
-      <div class="card"><i class="fab fa-html5"></i><br>HTML5</div>
-      <div class="card"><i class="fab fa-css3-alt"></i><br>CSS3</div>
-      <div class="card"><i class="fab fa-js-square"></i><br>JavaScript</div>
-      <div class="card"><i class="fab fa-react"></i><br>React.js</div>
-      <div class="card"><i class="fab fa-bootstrap"></i><br>Bootstrap</div>
+    <h2>Skills</h2>
+    
+    <div class="skills-category">
+      <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+      <div class="skills-grid">
+        <div class="card"><i class="fab fa-html5"></i><br>HTML5</div>
+        <div class="card"><i class="fab fa-css3-alt"></i><br>CSS3</div>
+        <div class="card"><i class="fab fa-js-square"></i><br>JavaScript</div>
+        <div class="card"><i class="fab fa-react"></i><br>React.js</div>
+        <div class="card"><i class="fab fa-bootstrap"></i><br>Bootstrap</div>
+      </div>
     </div>
-  </div>
-  
-  <div class="skills-category">
-    <h3><i class="fas fa-server"></i> Backend</h3>
-    <div class="skills-grid">
-      <div class="card"><i class="fab fa-node-js"></i><br>Node.js</div>
-      <div class="card"><i class="fas fa-server"></i><br>Express.js</div>
-      <div class="card"><i class="fas fa-database"></i><br>MongoDB</div>
-      <div class="card"><i class="fas fa-database"></i><br>MySQL</div>
+    
+    <div class="skills-category">
+      <h3><i class="fas fa-server"></i> Backend</h3>
+      <div class="skills-grid">
+        <div class="card"><i class="fab fa-node-js"></i><br>Node.js</div>
+        <div class="card"><i class="fas fa-server"></i><br>Express.js</div>
+        <div class="card"><i class="fas fa-database"></i><br>MongoDB</div>
+        <div class="card"><i class="fas fa-database"></i><br>MySQL</div>
+      </div>
     </div>
-  </div>
-  
-  <div class="skills-category">
-    <h3><i class="fas fa-tools"></i> Development Tools</h3>
-    <div class="skills-grid">
-      <div class="card"><i class="fab fa-git-alt"></i><br>Git</div>
-      <div class="card"><i class="fab fa-github"></i><br>GitHub</div>
-      <div class="card"><i class="fas fa-code-branch"></i><br>VS Code</div>
+    
+    <div class="skills-category">
+      <h3><i class="fas fa-tools"></i> Development Tools</h3>
+      <div class="skills-grid">
+        <div class="card"><i class="fab fa-git-alt"></i><br>Git</div>
+        <div class="card"><i class="fab fa-github"></i><br>GitHub</div>
+        <div class="card"><i class="fas fa-code-branch"></i><br>VS Code</div>
+      </div>
     </div>
-  </div>
-  
-  <div class="skills-category">
-    <h3><i class="fas fa-paint-brush"></i> Design & Creativity</h3>
-    <div class="skills-grid">
-      <div class="card"><i class="fab fa-figma"></i><br>Figma</div>
-      <div class="card"><i class="fas fa-palette"></i><br>Canva</div>
-      <div class="card"><i class="fas fa-pencil-ruler"></i><br>UI/UX</div>
-      <div class="card"><i class="fas fa-mobile-alt"></i><br>Responsive Design</div>
+    
+    <div class="skills-category">
+      <h3><i class="fas fa-paint-brush"></i> Design & Creativity</h3>
+      <div class="skills-grid">
+        <div class="card"><i class="fab fa-figma"></i><br>Figma</div>
+        <div class="card"><i class="fas fa-palette"></i><br>Canva</div>
+        <div class="card"><i class="fas fa-pencil-ruler"></i><br>UI/UX</div>
+        <div class="card"><i class="fas fa-mobile-alt"></i><br>Responsive Design</div>
+      </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
 
   <section id="projects">
     <h2>Projects</h2>
@@ -620,15 +100,14 @@
         <img src="blogimage.jpg" alt="Blog App">
         <h3>Blog Application</h3>
         <li>Built a full-stack blog platform with React.js, Node.js, Express, and MongoDB.</li>
-        <li> Implemented CRUD operations with RESTful API routes for creating, editing, and deleting blog posts</li>  
-        <li> Designed a responsive UI with Bootstrap and custom CSS for an optimal user experience.</li>
-        
+        <li>Implemented CRUD operations with RESTful API routes for creating, editing, and deleting blog posts</li>  
+        <li>Designed a responsive UI with Bootstrap and custom CSS for an optimal user experience.</li>
       </div>
       <div class="card project-card">
         <img src="portfolioimage.jpg" alt="Portfolio">
         <h3>Personal Portfolio</h3>
-        <li>Built a fully responsive portfolio from scratch using  HTML5, CSS3, and JavaScript</li>
-        <li> Enhanced interactivity with dynamic animations, dark/light mode toggle, and smooth scrolling</li>
+        <li>Built a fully responsive portfolio from scratch using HTML5, CSS3, and JavaScript</li>
+        <li>Enhanced interactivity with dynamic animations, dark/light mode toggle, and smooth scrolling</li>
       </div>
     </div>
   </section>
@@ -641,9 +120,9 @@
         <p><strong>Prompt Infotech</strong> | Aug 2024</p>
         <ul>
           <li>Acquired hands-on experience in HTML, CSS, and JavaScript.</li>
-           <li> Developed responsive web pages following modern design principles.</li>        
-          <li> Built interactive UI components as part of training exercises.</li>
-          </ul>
+          <li>Developed responsive web pages following modern design principles.</li>        
+          <li>Built interactive UI components as part of training exercises.</li>
+        </ul>
       </div>
       <div class="card experience-card">
         <h3>MERN Stack Intern</h3>
@@ -652,109 +131,64 @@
           <li>Created REST APIs and full-stack features</li>
           <li>Developed full-stack web applications using MongoDB, Express.js, React.js, and Node.js.</li>
           <li>Designed responsive user interfaces with React, Bootstrap, and CSS.</li>
-          <li> Integrated MongoDB for efficient data storage and retrieval.</li>
-          <li> Managed project versions using Git and GitHub for code tracking.</li>
+          <li>Integrated MongoDB for efficient data storage and retrieval.</li>
+          <li>Managed project versions using Git and GitHub for code tracking.</li>
         </ul>
       </div>
     </div>
   </section>
 
-    <section id="personality" class="section">
-  <h2>Beyond Code</h2>
-  <div class="personality-grid">
-    <div class="trait-card">
-      <i class="fas fa-lightbulb"></i>
-      <h3>Creative Problem Solver</h3>
-      <p>I transform complex challenges into elegant, efficient solutions through innovative thinking</p>
+  <section id="personality" class="section">
+    <h2>Beyond Code</h2>
+    <div class="personality-grid">
+      <div class="trait-card">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Creative Problem Solver</h3>
+        <p>I transform complex challenges into elegant, efficient solutions through innovative thinking</p>
+      </div>
+      <div class="trait-card">
+        <i class="fas fa-book"></i>
+        <h3>Continuous Learner</h3>
+        <p>Constantly expanding my skills with new technologies and design methodologies</p>
+      </div>
+      <div class="trait-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Design Enthusiast</h3>
+        <p>Passionate about creating visually appealing and intuitive user experiences</p>
+      </div>
     </div>
-    <div class="trait-card">
-      <i class="fas fa-book"></i>
-      <h3>Continuous Learner</h3>
-      <p>Constantly expanding my skills with new technologies and design methodologies</p>
-    </div>
-    <div class="trait-card">
-      <i class="fas fa-paint-brush"></i>
-      <h3>Design Enthusiast</h3>
-      <p>Passionate about creating visually appealing and intuitive user experiences</p>
-    </div>
-  </div>
-</section>
+  </section>
 
- <section class="section contact-section" id="contact">
-  <h2>Contact Me</h2>
-  <form 
-    id="contactForm" 
-    action="https://formsubmit.co/bc2e8cfe2272e480dec924f274a5fd1e" 
-    method="POST"
-    class="contact-form"
-  >
-    <!-- FormSubmit Settings -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://nithyasreeee.github.io/portfolio/success.html">
-    <input type="hidden" name="_subject" value="New Portfolio Message!">
+  <section class="section contact-section" id="contact">
+    <h2>Contact Me</h2>
+    <form 
+      id="contactForm" 
+      action="https://formsubmit.co/bc2e8cfe2272e480dec924f274a5fd1e" 
+      method="POST"
+      class="contact-form"
+    >
+      <!-- FormSubmit Settings -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://nithyasreeee.github.io/portfolio/success.html">
+      <input type="hidden" name="_subject" value="New Portfolio Message!">
+      
+      <!-- Form Fields -->
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
     
-    <!-- Form Fields -->
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    
-    <button type="submit">Send Message</button>
-  </form>
-  
-  <div class="contact-links">
-    <a href="https://github.com/nithyasreeee" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://www.linkedin.com/in/nithyasree3018" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="mailto:nithyasreerajaram16459@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-  </div>
-</section>
-
-
-
+    <div class="contact-links">
+      <a href="https://github.com/nithyasreeee" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/nithyasree3018" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:nithyasreerajaram16459@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </section>
 
   <footer>&copy; 2025 Nithya Sree</footer>
 
-
-
-  <script>
-    // Fade-in effect
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.section').forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          sec.classList.add('fade-in');
-        }
-      });
-    });
-// Theme toggle logic
-const toggleBtn = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Set initial theme
-const savedTheme = localStorage.getItem('theme') || 'light';
-body.classList.add(savedTheme + '-theme');
-updateButtonText(savedTheme);
-
-toggleBtn.addEventListener('click', () => {
-  if (body.classList.contains('dark-theme')) {
-    body.classList.remove('dark-theme');
-    body.classList.add('light-theme');
-    localStorage.setItem('theme', 'light');
-  } else {
-    body.classList.remove('light-theme');
-    body.classList.add('dark-theme');
-    localStorage.setItem('theme', 'dark');
-  }
-  updateButtonText(localStorage.getItem('theme'));
-});
-// Contact form submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  const submitBtn = this.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-});
-function updateButtonText(theme) {
-  toggleBtn.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
-}
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
